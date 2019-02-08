@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             val builder = CustomTabsIntent.Builder()
 
             // modify toolbar color
-            builder.setToolbarColor(ContextCompat.getColor(this@MainActivity, R.color.colorBlue))
+            builder.setToolbarColor(ContextCompat.getColor(this@MainActivity, R.color.colorPrimary))
 
             // add share button to overflow menu
             builder.addDefaultShareMenuItem()
@@ -62,9 +62,11 @@ class MainActivity : AppCompatActivity() {
 
             val customTabsIntent = builder.build()
 
+            // check is chrom available
             val packageName = customTabHelper.getPackageNameToUse(this, MINDORKS_PUBLICATION)
 
             if (packageName == null) {
+                // if chrome not available open in web view
                 val intentOpenUri = Intent(this, WebViewActivity::class.java)
                 intentOpenUri.putExtra(WebViewActivity.EXTRA_URL, Uri.parse(MINDORKS_PUBLICATION).toString())
                 startActivity(intentOpenUri)
