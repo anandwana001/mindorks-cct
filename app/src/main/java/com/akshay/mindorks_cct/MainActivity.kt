@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
             builder.setShowTitle(true)
 
             // animation for enter and exit of tab
-            builder.setStartAnimations(this, android.R.anim.fade_in, android.R.anim.fade_out);
-            builder.setExitAnimations(this, android.R.anim.fade_in, android.R.anim.fade_out);
+            builder.setStartAnimations(this, android.R.anim.fade_in, android.R.anim.fade_out)
+            builder.setExitAnimations(this, android.R.anim.fade_in, android.R.anim.fade_out)
 
             val customTabsIntent = builder.build()
 
